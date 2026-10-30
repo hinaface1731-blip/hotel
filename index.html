@@ -27,6 +27,7 @@
       <a href="#about">О доме</a>
       <a href="#rooms">Номера</a>
       <a href="#arshan">Аршан</a>
+      <a href="#tours">Экскурсии</a>
       <a href="#reviews">Отзывы</a>
       <a href="#contacts">Как добраться</a>
     </nav>
@@ -181,6 +182,69 @@
     </div>
   </section>
 
+  <!-- TOURS -->
+  <section class="section tours" id="tours">
+    <div class="container">
+      <div class="tours__head">
+        <div>
+          <p class="eyebrow reveal">Экскурсии от хозяина</p>
+          <h2 class="h2 reveal">Покажем Тунку так, как&nbsp;знают только местные</h2>
+          <p class="tours__lead reveal">Обзорные экскурсии по Тункинскому району прямо от дома: дацан, термальные источники, мараловая и страусиная фермы, лучшие видовые точки для фотосессий — с биноклем, чтобы разглядеть горы. А ещё туры в Монголию, на озеро Хубсугул.</p>
+        </div>
+        <ul class="trust reveal">
+          <li><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg><span><b>Документы проверены</b>через Госуслуги</span></li>
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><b>Опыт 3–7 лет</b>от 1 часа, срочные заказы</span></li>
+          <li><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 15h4"/></svg><span><b>Без предоплаты</b>работаем с юрлицами и ИП</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M3 16V8a2 2 0 0 1 2-2h10l4 4h1a1 1 0 0 1 1 1v5h-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M9 17h6"/></svg><span><b>Трансфер</b>для взрослых, детей и семей</span></li>
+        </ul>
+      </div>
+
+      <div class="routes">
+        <article class="route-card reveal">
+          <div class="route-card__img"><img src="assets/img/ex-datsan.webp" alt="Ворота буддийского дацана Бурхан Бавэ среди сосен" loading="lazy"></div>
+          <h3>Дацан Бурхан Бавэ</h3>
+          <p>Яркие ворота, молитвенные барабаны и тишина соснового леса.</p>
+        </article>
+        <article class="route-card reveal">
+          <div class="route-card__img"><img src="assets/img/ex-maral.webp" alt="Маралы на заснеженном поле на фоне Саян" loading="lazy"></div>
+          <h3>Мараловая ферма</h3>
+          <p>Благородные олени на фоне заснеженных Саян — можно подойти совсем близко.</p>
+        </article>
+        <article class="route-card reveal">
+          <div class="route-card__img"><img src="assets/img/ex-ostrich.webp" alt="Два страуса на ферме" loading="lazy"></div>
+          <h3>Страусиная ферма</h3>
+          <p>Неожиданные жители Тункинской долины. Дети в восторге.</p>
+        </article>
+        <article class="route-card reveal">
+          <div class="route-card__img"><img src="assets/img/ex-khovsgol.webp" alt="Озеро Хубсугул и горы Монголии" loading="lazy"></div>
+          <h3>Монголия и Хубсугул</h3>
+          <p>«Младший брат Байкала» — тур за границу, к озеру среди гор.</p>
+        </article>
+      </div>
+
+      <div class="prices">
+        <div class="price reveal">
+          <span class="price__name">Индивидуальная экскурсия</span>
+          <b>2 500 ₽</b>
+          <small>6 часов · для вас и ваших близких</small>
+          <button class="btn btn--line" type="button" data-tour="Индивидуальная экскурсия (6 ч, 2 500 ₽)">Заказать</button>
+        </div>
+        <div class="price price--hot reveal">
+          <span class="price__name">Групповая экскурсия</span>
+          <b>10 000 ₽</b>
+          <small>6 часов · для большой компании</small>
+          <button class="btn btn--gold" type="button" data-tour="Групповая экскурсия (6 ч, 10 000 ₽)">Заказать</button>
+        </div>
+        <div class="price reveal">
+          <span class="price__name">Услуги гида</span>
+          <b>1 000 ₽</b>
+          <small>6 часов · на вашем транспорте</small>
+          <button class="btn btn--line" type="button" data-tour="Услуги гида (6 ч, 1 000 ₽)">Заказать</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- REVIEWS -->
   <section class="section reviews" id="reviews">
     <div class="container">
@@ -251,6 +315,15 @@
         </div>
         <label class="f"><span>Ваше имя</span><input type="text" name="name" placeholder="Как к вам обращаться" required></label>
         <label class="f"><span>Телефон</span><input type="tel" name="phone" placeholder="+7 (___) ___‑__‑__" required></label>
+        <label class="f"><span>Экскурсия</span>
+          <select name="tour">
+            <option value="">Не нужна</option>
+            <option>Индивидуальная экскурсия (6 ч, 2 500 ₽)</option>
+            <option>Групповая экскурсия (6 ч, 10 000 ₽)</option>
+            <option>Услуги гида (6 ч, 1 000 ₽)</option>
+            <option>Тур в Монголию / на Хубсугул</option>
+          </select>
+        </label>
         <label class="f"><span>Пожелания</span><textarea name="comment" rows="2" placeholder="Например: приедем с собакой, нужен мангал"></textarea></label>
         <div class="bform__sum" id="sum" hidden></div>
         <p class="bform__err" id="err" role="alert"></p>

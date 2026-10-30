@@ -165,6 +165,7 @@ bform.addEventListener("submit", (e) => {
     `Имя: ${f.name.value.trim()}`,
     `Телефон: ${f.phone.value}`,
   ];
+  if (f.tour.value) lines.push(`Экскурсия: ${f.tour.value}`);
   if (f.comment.value.trim()) lines.push(`Пожелания: ${f.comment.value.trim()}`);
   openModal(lines.join("\n"));
 });
@@ -255,4 +256,11 @@ const track = $("#rvTrack");
 $$(".rv-btn").forEach((b) => b.addEventListener("click", () => {
   const card = $(".rv", track);
   track.scrollBy({ left: +b.dataset.dir * (card.offsetWidth + 20), behavior: "smooth" });
+}));
+
+/* ---------- Tours → preselect in the booking form ---------- */
+$$("[data-tour]").forEach((b) => b.addEventListener("click", () => {
+  bform.elements.tour.value = b.dataset.tour;
+  booking.scrollIntoView({ behavior: "smooth" });
+  setTimeout(() => bform.elements.checkin.focus({ preventScroll: true }), 700);
 }));
