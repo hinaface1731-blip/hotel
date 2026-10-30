@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Баялаг — гостевой дом в Аршане, Тункинская долина</title>
+  <meta name="description" content="Гостевой дом «Баялаг» в центре посёлка Аршан: 4 номера, до 11 гостей, кухня 60 м², мангал, Wi‑Fi. Тункинская долина, Республика Бурятия. Бронирование напрямую.">
+  <meta property="og:title" content="Баялаг — гостевой дом в Аршане">
+  <meta property="og:description" content="Дом на 11 гостей в центре Аршана, у подножия Саян. Бронирование напрямую у хозяина.">
+  <meta property="og:image" content="assets/img/valley.webp">
+  <meta name="theme-color" content="#14231c">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2314231c'/%3E%3Cpath d='M8 48 24 22l9 14 7-10 16 22z' fill='%23d9a441'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="#top" class="logo" aria-label="Баялаг — на главную">
+      <svg viewBox="0 0 40 28" aria-hidden="true"><path d="M1 27 13 6l7 11 5-7 14 17z" fill="currentColor"/><circle cx="31" cy="5" r="3" fill="currentColor"/></svg>
+      <span>Баялаг</span>
+    </a>
+    <nav class="nav__links" aria-label="Разделы">
+      <a href="#about">О доме</a>
+      <a href="#rooms">Номера</a>
+      <a href="#arshan">Аршан</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Как добраться</a>
+    </nav>
+    <a href="#booking" class="btn btn--gold btn--sm">Забронировать</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg" style="background-image:url('assets/img/valley.webp')"></div>
+    <div class="hero__shade"></div>
+    <div class="container hero__content">
+      <p class="eyebrow reveal">Аршан · Тункинская долина · Бурятия</p>
+      <h1 class="hero__title reveal">Дом у подножия<br><em>Восточных Саян</em></h1>
+      <p class="hero__lead reveal">Гостевой дом «Баялаг» в самом центре Аршана. Целебные источники, водопады Кынгарги и дацан — в нескольких минутах пешком. Кухня, мангал и место для всей компании — до 11 гостей.</p>
+
+      <form class="quick reveal" id="quick" autocomplete="off">
+        <label class="quick__field">
+          <span>Заезд</span>
+          <input type="date" name="checkin" required>
+        </label>
+        <label class="quick__field">
+          <span>Выезд</span>
+          <input type="date" name="checkout" required>
+        </label>
+        <label class="quick__field">
+          <span>Гостей</span>
+          <select name="guests">
+            <option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option>
+          </select>
+        </label>
+        <button class="btn btn--gold" type="submit">Проверить даты</button>
+      </form>
+    </div>
+    <a href="#about" class="hero__scroll" aria-label="Листать вниз"><span></span></a>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container stats__grid">
+      <div class="stat reveal"><b>4</b><span>уютных номера</span></div>
+      <div class="stat reveal"><b>до 11</b><span>гостей в доме</span></div>
+      <div class="stat reveal"><b>60 м²</b><span>общая кухня‑гостиная</span></div>
+      <div class="stat reveal"><b>4,9</b><span>средняя оценка гостей</span></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="container about__grid">
+      <div class="about__text">
+        <p class="eyebrow reveal">О доме</p>
+        <h2 class="h2 reveal">Двухэтажный дом, где&nbsp;хватит места всем</h2>
+        <p class="reveal">Дом площадью 140&nbsp;м² стоит в центре посёлка, на асфальтированной Трактовой улице. Рядом магазины, кафе и остановка общественного транспорта — а за окном горы.</p>
+        <p class="reveal">Номера — на втором этаже. На первом — просторная кухня‑гостиная на 60&nbsp;м²: холодильник, электроплита с духовкой, микроволновка, чайник, посуда, большой стол и диван. Во дворе есть мангал — для вечеров после прогулок к водопадам.</p>
+        <ul class="ticks reveal">
+          <li>Чистое постельное бельё и полотенца</li>
+          <li>Бесконтактное заселение</li>
+          <li>Можно с детьми и с питомцами</li>
+          <li>Подходит для компаний и семейных праздников</li>
+        </ul>
+        <a href="#booking" class="btn btn--dark reveal">Узнать свободные даты</a>
+      </div>
+      <div class="about__media">
+        <figure class="about__img about__img--a reveal"><img src="assets/img/facade.webp" alt="Фасад гостевого дома «Баялаг» на Трактовой улице в Аршане" loading="lazy"></figure>
+        <figure class="about__img about__img--b reveal"><img src="assets/img/kitchen.webp" alt="Просторная кухня‑гостиная с шахматным полом" loading="lazy"></figure>
+        <div class="about__badge reveal">
+          <b>33 км</b>
+          <span>от Кырена,<br>районного центра</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOMS / GALLERY -->
+  <section class="section rooms" id="rooms">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow reveal">Номера и пространство</p>
+        <h2 class="h2 reveal">Светло, чисто, по‑домашнему</h2>
+        <p class="section__sub reveal">Снимите весь дом для своей компании или отдельный номер. Нажмите на фото, чтобы рассмотреть подробнее.</p>
+      </div>
+      <div class="gallery" id="gallery">
+        <figure class="g g--wide reveal"><img src="assets/img/double.webp" alt="Номер с двуспальной кроватью" loading="lazy"><figcaption>Номер с двуспальной кроватью</figcaption></figure>
+        <figure class="g reveal"><img src="assets/img/twin.webp" alt="Номер с двумя кроватями" loading="lazy"><figcaption>Twin — две кровати</figcaption></figure>
+        <figure class="g reveal"><img src="assets/img/triple.webp" alt="Номер на троих" loading="lazy"><figcaption>Номер для семьи</figcaption></figure>
+        <figure class="g reveal"><img src="assets/img/dining.webp" alt="Обеденная зона на кухне" loading="lazy"><figcaption>Обеденная зона</figcaption></figure>
+        <figure class="g g--tall reveal"><img src="assets/img/shower.webp" alt="Душевая кабина и водонагреватель" loading="lazy"><figcaption>Душевая с бойлером</figcaption></figure>
+        <figure class="g reveal"><img src="assets/img/room-single.webp" alt="Одноместный номер" loading="lazy"><figcaption>Одноместный номер</figcaption></figure>
+        <figure class="g reveal"><img src="assets/img/single.webp" alt="Номер с вешалкой и шкафом" loading="lazy"><figcaption>Место для вещей</figcaption></figure>
+        <figure class="g reveal"><img src="assets/img/desk.webp" alt="Рабочий стол в холле" loading="lazy"><figcaption>Рабочее место</figcaption></figure>
+        <figure class="g g--w2 reveal"><img src="assets/img/hall.webp" alt="Холл второго этажа" loading="lazy"><figcaption>Холл второго этажа</figcaption></figure>
+        <figure class="g reveal"><img src="assets/img/kitchen.webp" alt="Кухня с барной стойкой и телевизором" loading="lazy"><figcaption>Кухня‑гостиная 60 м²</figcaption></figure>
+        <figure class="g reveal"><img src="assets/img/wc.webp" alt="Санузел" loading="lazy"><figcaption>Санузел</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section class="section amenities">
+    <div class="container">
+      <div class="section__head section__head--light">
+        <p class="eyebrow reveal">Удобства</p>
+        <h2 class="h2 reveal">Всё, что нужно в поездке</h2>
+      </div>
+      <div class="amen">
+        <div class="amen__item reveal"><svg viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.5" r="1"/></svg><b>Wi‑Fi</b><span>Бесплатный интернет во всём доме</span></div>
+        <div class="amen__item reveal"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M4 9h16M8 6h.01M11 6h.01"/><circle cx="12" cy="15" r="3"/></svg><b>Кухня 60 м²</b><span>Плита с духовкой, холодильник, СВЧ, посуда</span></div>
+        <div class="amen__item reveal"><svg viewBox="0 0 24 24"><path d="M12 3c2 3-1 4 0 7M8 5c1.5 2-1 3 0 5M16 5c1.5 2-1 3 0 5M3 13h18l-2 4H5zM7 17l-2 4M17 17l2 4"/></svg><b>Мангал</b><span>Шашлыки и ужины под открытым небом</span></div>
+        <div class="amen__item reveal"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="13" r="5"/><path d="M8 5h.01M11 5h3"/></svg><b>Стиральная машина</b><span>И утюг — для долгих поездок</span></div>
+        <div class="amen__item reveal"><svg viewBox="0 0 24 24"><path d="M12 22c4-3 6-6.5 6-10a6 6 0 0 0-12 0c0 3.5 2 7 6 10z"/><path d="M12 9v5M9.5 11.5h5"/></svg><b>Горячая вода</b><span>Водонагреватель, отопление, канализация</span></div>
+        <div class="amen__item reveal"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg><b>Телевизор</b><span>В гостиной на первом этаже</span></div>
+        <div class="amen__item reveal"><svg viewBox="0 0 24 24"><circle cx="7" cy="5" r="2"/><circle cx="17" cy="5" r="2"/><circle cx="4" cy="11" r="2"/><circle cx="20" cy="11" r="2"/><path d="M12 11c-3 0-6 4-6 7 0 2 2 3 3.5 2.5S11 20 12 20s1 .5 2.5.5S18 20 18 18c0-3-3-7-6-7z"/></svg><b>С питомцами</b><span>Берите четвероногих друзей с собой</span></div>
+        <div class="amen__item reveal"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4M12 15v2"/></svg><b>Бесконтактно</b><span>Заселение без ожидания хозяина</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARSHAN -->
+  <section class="section arshan" id="arshan">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow reveal">Что рядом</p>
+        <h2 class="h2 reveal">Аршан — сердце Тункинской долины</h2>
+        <p class="section__sub reveal">Курортный посёлок у подножия Тункинских гольцов: минеральные источники, горные реки и буддийские святыни. Из нашего дома всё это — в пешей доступности.</p>
+      </div>
+      <div class="places">
+        <article class="place place--big reveal">
+          <img src="assets/img/river.webp" alt="Деревянная тропа вдоль горной реки Кынгарга" loading="lazy">
+          <div class="place__body"><span class="place__tag">Пешком</span><h3>Водопады Кынгарги</h3><p>Тропа вдоль бурной горной реки через кедровый лес к каскаду водопадов.</p></div>
+        </article>
+        <article class="place reveal">
+          <img src="assets/img/spring.webp" alt="Часовня у минерального источника в курортном парке" loading="lazy">
+          <div class="place__body"><span class="place__tag">Здоровье</span><h3>Целебные источники</h3><p>Знаменитая минеральная вода «Аршан» в курортном парке.</p></div>
+        </article>
+        <article class="place reveal">
+          <img src="assets/img/datsan.webp" alt="Буддийский дацан Бодхидхарма на фоне гор" loading="lazy">
+          <div class="place__body"><span class="place__tag">Культура</span><h3>Дацан Бодхидхарма</h3><p>Буддийский храм у подножия Саян и тропа к ступам.</p></div>
+        </article>
+        <article class="place reveal">
+          <img src="assets/img/autumn.webp" alt="Осенние лиственницы и заснеженные вершины Саян" loading="lazy">
+          <div class="place__body"><span class="place__tag">Природа</span><h3>Саяны круглый год</h3><p>Золотая осень, снежные вершины и чистейший горный воздух.</p></div>
+        </article>
+        <article class="place reveal">
+          <img src="assets/img/market.webp" alt="Сувенирный рынок в Аршане" loading="lazy">
+          <div class="place__body"><span class="place__tag">Шопинг</span><h3>Сувенирный рынок</h3><p>Травяные чаи, мёд, войлок и бурятские сувениры.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section reviews" id="reviews">
+    <div class="container">
+      <div class="reviews__head">
+        <div>
+          <p class="eyebrow reveal">Отзывы гостей</p>
+          <h2 class="h2 reveal">Нам доверяют отдых</h2>
+        </div>
+        <div class="score reveal">
+          <b>4,9</b>
+          <div><span class="stars" aria-label="5 звёзд">★★★★★</span><small>по 10 отзывам гостей</small></div>
+        </div>
+      </div>
+      <div class="rv-track" id="rvTrack">
+        <blockquote class="rv reveal"><span class="stars">★★★★★</span><p>Снимали домик на 12 человек. Всё очень понравилось. Геолокация удобная, всё что нужно было, оказалось рядом. Рекомендую!</p><footer><i style="--c:#3b82f6">А</i>Анастасия</footer></blockquote>
+        <blockquote class="rv reveal"><span class="stars">★★★★★</span><p>Отличный арендодатель, без проблем забронировали, заселились, всё чисто, необходимая посуда, сушилка, холодильник есть. Чистые душ и туалет. Приемлемая цена, приедем ещё.</p><footer><i style="--c:#a16207">М</i>Марина Сокол</footer></blockquote>
+        <blockquote class="rv reveal"><span class="stars">★★★★★</span><p>Всё отлично! Спасибо большое! Домик классный, есть мангал, хорошее место.</p><footer><i style="--c:#6366f1">Д</i>Дмитрий</footer></blockquote>
+        <blockquote class="rv reveal"><span class="stars">★★★★★</span><p>Жили с ребёнком, всё понравилось, чисто, уютно. Спасибо!</p><footer><i style="--c:#65a30d">Т</i>Татьяна</footer></blockquote>
+        <blockquote class="rv reveal"><span class="stars">★★★★★</span><p>Хорошее расположение, чистое постельное бельё, есть холодильник, чайник, микроволновка. За эту стоимость — хороший вариант.</p><footer><i style="--c:#ca8a04">Ю</i>Юлия</footer></blockquote>
+        <blockquote class="rv reveal"><span class="stars">★★★★★</span><p>Чисто. На компанию хороший дом. Выспались отлично.</p><footer><i style="--c:#c2410c">Ю</i>Юлия Сидоренко</footer></blockquote>
+        <blockquote class="rv reveal"><span class="stars">★★★★★</span><p>Классно, быстро. Выручили :)</p><footer><i style="--c:#ea580c">V</i>Vitaliy</footer></blockquote>
+        <blockquote class="rv reveal"><span class="stars">★★★★<em>★</em></span><p>Чистенько, свеженько. Уютно.</p><footer><i style="--c:#ef4444">П</i>Павел</footer></blockquote>
+      </div>
+      <div class="rv-nav">
+        <button class="rv-btn" data-dir="-1" aria-label="Предыдущие отзывы">←</button>
+        <button class="rv-btn" data-dir="1" aria-label="Следующие отзывы">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="section booking" id="booking">
+    <div class="booking__bg" style="background-image:url('assets/img/autumn.webp')"></div>
+    <div class="container booking__grid">
+      <div class="booking__info">
+        <p class="eyebrow reveal">Бронирование</p>
+        <h2 class="h2 reveal">Забронируйте напрямую — без комиссий</h2>
+        <p class="reveal">Оставьте заявку: хозяин дома Бэлигто свяжется с вами, подтвердит даты и расскажет, как добраться.</p>
+        <dl class="rules reveal">
+          <div><dt>Заезд и выезд</dt><dd>Гибко, по договорённости</dd></div>
+          <div><dt>Залог</dt><dd>1 200 ₽, возвращается при выезде</dd></div>
+          <div><dt>Гостей</dt><dd>до 11 человек</dd></div>
+          <div><dt>Дети и питомцы</dt><dd>Можно</dd></div>
+          <div><dt>Праздники</dt><dd>Разрешены</dd></div>
+          <div><dt>Курение</dt><dd>В доме нельзя</dd></div>
+        </dl>
+      </div>
+
+      <form class="bform reveal" id="bform" novalidate>
+        <h3>Заявка на проживание</h3>
+        <div class="seg" role="radiogroup" aria-label="Что бронируете">
+          <label><input type="radio" name="type" value="Весь дом" checked><span>Весь дом</span></label>
+          <label><input type="radio" name="type" value="Номер"><span>Номер</span></label>
+        </div>
+        <div class="row">
+          <label class="f"><span>Заезд</span><input type="date" name="checkin" required></label>
+          <label class="f"><span>Выезд</span><input type="date" name="checkout" required></label>
+        </div>
+        <div class="row">
+          <label class="f"><span>Взрослых</span>
+            <div class="stepper"><button type="button" data-step="-1" aria-label="Меньше">−</button><input type="number" name="adults" value="2" min="1" max="11" inputmode="numeric"><button type="button" data-step="1" aria-label="Больше">+</button></div>
+          </label>
+          <label class="f"><span>Детей</span>
+            <div class="stepper"><button type="button" data-step="-1" aria-label="Меньше">−</button><input type="number" name="kids" value="0" min="0" max="10" inputmode="numeric"><button type="button" data-step="1" aria-label="Больше">+</button></div>
+          </label>
+        </div>
+        <label class="f"><span>Ваше имя</span><input type="text" name="name" placeholder="Как к вам обращаться" required></label>
+        <label class="f"><span>Телефон</span><input type="tel" name="phone" placeholder="+7 (___) ___‑__‑__" required></label>
+        <label class="f"><span>Пожелания</span><textarea name="comment" rows="2" placeholder="Например: приедем с собакой, нужен мангал"></textarea></label>
+        <div class="bform__sum" id="sum" hidden></div>
+        <p class="bform__err" id="err" role="alert"></p>
+        <button class="btn btn--gold btn--block" type="submit">Отправить заявку</button>
+        <p class="bform__note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных для связи по бронированию.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="section contacts" id="contacts">
+    <div class="container contacts__grid">
+      <div class="contacts__info">
+        <p class="eyebrow reveal">Как добраться</p>
+        <h2 class="h2 reveal">Трактовая улица, 34Б</h2>
+        <p class="reveal">Республика Бурятия, Тункинский район, посёлок Аршан. Центр посёлка, асфальтированная дорога до самого дома, рядом остановка общественного транспорта.</p>
+        <ul class="route reveal">
+          <li><b>~220 км</b><span>от Иркутска через Култук, 3,5–4 часа на машине</span></li>
+          <li><b>~530 км</b><span>от Улан‑Удэ по трассе вдоль Байкала</span></li>
+          <li><b>5 мин</b><span>пешком до курортного парка и источников</span></li>
+        </ul>
+        <div class="contacts__links reveal" id="contactLinks">
+          <a class="btn btn--dark" target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=%D0%A0%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%20%D0%91%D1%83%D1%80%D1%8F%D1%82%D0%B8%D1%8F%2C%20%D0%90%D1%80%D1%88%D0%B0%D0%BD%2C%20%D0%A2%D1%80%D0%B0%D0%BA%D1%82%D0%BE%D0%B2%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%2034%D0%91">Открыть в Яндекс Картах</a>
+        </div>
+      </div>
+      <div class="map reveal">
+        <iframe title="Карта: Аршан, Трактовая улица, 34Б" loading="lazy" src="https://yandex.ru/map-widget/v1/?text=%D0%A0%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%20%D0%91%D1%83%D1%80%D1%8F%D1%82%D0%B8%D1%8F%2C%20%D0%90%D1%80%D1%88%D0%B0%D0%BD%2C%20%D0%A2%D1%80%D0%B0%D0%BA%D1%82%D0%BE%D0%B2%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%2034%D0%91&amp;z=16" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <a href="#top" class="logo">
+      <svg viewBox="0 0 40 28" aria-hidden="true"><path d="M1 27 13 6l7 11 5-7 14 17z" fill="currentColor"/><circle cx="31" cy="5" r="3" fill="currentColor"/></svg>
+      <span>Баялаг</span>
+    </a>
+    <p>Гостевой дом в Аршане · Тункинская долина, Республика Бурятия</p>
+    <p class="footer__copy">© <span id="year"></span> Баялаг</p>
+  </div>
+</footer>
+
+<a href="#booking" class="mobile-cta">Забронировать</a>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" hidden>
+  <button class="lb__close" aria-label="Закрыть">×</button>
+  <button class="lb__arrow lb__prev" aria-label="Предыдущее фото">‹</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="lb__arrow lb__next" aria-label="Следующее фото">›</button>
+</div>
+
+<!-- Booking result modal -->
+<div class="modal" id="modal" hidden>
+  <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal__close" aria-label="Закрыть">×</button>
+    <div class="modal__icon">✓</div>
+    <h3 id="modalTitle">Заявка готова</h3>
+    <p>Отправьте её хозяину удобным способом — он подтвердит бронь и ответит на вопросы.</p>
+    <pre class="modal__text" id="modalText"></pre>
+    <div class="modal__actions" id="modalActions"></div>
+  </div>
+</div>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
