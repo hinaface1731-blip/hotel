@@ -4,12 +4,14 @@
  *   whatsapp — номер для WhatsApp без "+", например "79001234567"
  *   telegram — имя пользователя без "@", например "bayalag_arshan"
  *   email    — почта для заявок
+ *   price    — стоимость за одного гостя в сутки, ₽
  */
 const CONFIG = {
   phone: "",
   whatsapp: "",
   telegram: "",
   email: "",
+  price: 1300,
 };
 
 const $ = (s, el = document) => el.querySelector(s);
@@ -49,6 +51,7 @@ const addDays = (s, n) => { const d = new Date(s + "T00:00"); d.setDate(d.getDat
 const today = iso(new Date());
 const nightsBetween = (a, b) => Math.round((new Date(b + "T00:00") - new Date(a + "T00:00")) / 86400000);
 const fmtDate = (s) => new Date(s + "T00:00").toLocaleDateString("ru-RU", { day: "numeric", month: "long", year: "numeric" });
+const rub = (n) => n.toLocaleString("ru-RU") + " ₽";
 const plural = (n, [one, few, many]) => {
   const m10 = n % 10, m100 = n % 100;
   if (m10 === 1 && m100 !== 11) return one;
@@ -104,7 +107,7 @@ function updateSummary() {
   if (f.checkin.value && f.checkout.value && f.checkout.value > f.checkin.value) {
     const n = nightsBetween(f.checkin.value, f.checkout.value);
     sum.hidden = false;
-    sum.textContent = `${n} ${plural(n, ["ночь", "ночи", "ночей"])} · ${guests} ${plural(guests, ["гость", "гостя", "гостей"])} · ${f.type.value.toLowerCase()}`;
+    sum.textContent = `${n} ${plural(n, ["ночь", "ночи", "ночей"])} · ${guests} ${plural(guests, ["гость", "гостя", "гостей"])} · ≈ ${rub(n * guests * CONFIG.price)}`;
   } else {
     sum.hidden = true;
   }
@@ -154,10 +157,11 @@ bform.addEventListener("submit", (e) => {
 
   const n = nightsBetween(f.checkin.value, f.checkout.value);
   const lines = [
-    "Здравствуйте! Хочу забронировать в гостевом доме «Баялаг» (Аршан).",
+    "Здравствуйте! Хочу забронировать в гостевом доме «Баялиг» (Аршан).",
     `Формат: ${f.type.value}`,
     `Даты: ${fmtDate(f.checkin.value)} — ${fmtDate(f.checkout.value)} (${n} ${plural(n, ["ночь", "ночи", "ночей"])})`,
     `Гости: ${f.adults.value} взр.` + (+f.kids.value ? `, ${f.kids.value} дет.` : ""),
+    `Ориентировочно: ${rub(n * guests * CONFIG.price)} (${rub(CONFIG.price)} × ${guests} гост. × ${n} ноч.)`,
     `Имя: ${f.name.value.trim()}`,
     `Телефон: ${f.phone.value}`,
   ];
@@ -172,7 +176,7 @@ function actionButtons(text) {
   const list = [];
   if (CONFIG.whatsapp) list.push(["Отправить в WhatsApp", `https://wa.me/${CONFIG.whatsapp}?text=${enc}`, "gold"]);
   if (CONFIG.telegram) list.push(["Написать в Telegram", `https://t.me/${CONFIG.telegram}`, "dark", true]);
-  if (CONFIG.email) list.push(["Отправить на почту", `mailto:${CONFIG.email}?subject=${encodeURIComponent("Бронирование — Баялаг")}&body=${enc}`, "dark"]);
+  if (CONFIG.email) list.push(["Отправить на почту", `mailto:${CONFIG.email}?subject=${encodeURIComponent("Бронирование — Баялиг")}&body=${enc}`, "dark"]);
   if (CONFIG.phone) list.push(["Позвонить " + CONFIG.phone, `tel:${CONFIG.phone}`, "dark"]);
   return list;
 }

@@ -23,6 +23,7 @@ body {
   color: var(--ink);
   background: var(--paper);
   -webkit-font-smoothing: antialiased;
+  font-variant-numeric: lining-nums;
   overflow-x: hidden;
 }
 img { display: block; max-width: 100%; }
@@ -122,7 +123,9 @@ h1, h2, h3 { margin: 0; }
   text-shadow: 0 4px 40px rgba(0, 0, 0, .3);
 }
 .hero__title em { font-style: italic; color: var(--gold-2); font-weight: 500; }
-.hero__lead { max-width: 600px; font-size: clamp(17px, 1.6vw, 19px); opacity: .92; margin: 0 0 40px; }
+.hero__lead { max-width: 600px; font-size: clamp(17px, 1.6vw, 19px); opacity: .92; margin: 0 0 22px; }
+.hero__price { display: inline-flex; align-items: baseline; gap: 10px; margin: 0 0 32px; padding: 10px 20px; border-radius: 999px; background: rgba(217, 164, 65, .18); border: 1px solid rgba(232, 187, 94, .5); font-size: 15px; }
+.hero__price b { font: 700 26px/1 var(--serif); color: var(--gold-2); }
 
 .quick {
   display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; gap: 6px;
@@ -386,3 +389,11 @@ h1, h2, h3 { margin: 0; }
   .mobile-cta.is-on { transform: none; }
   .footer { padding-bottom: 100px; }
 }
+
+/* Cormorant has old-style figures only — numbers use the sans face */
+.stat b, .hero__price b, .score b, .route b, .about__badge b { font-family: var(--sans); font-weight: 700; letter-spacing: -.02em; }
+.stat b { font-size: clamp(30px, 3.6vw, 42px); }
+.hero__price b { font-size: 20px; }
+.score b { font-size: 42px; }
+.route b { font-size: 20px; }
+.about__badge b { font-size: 28px; }
