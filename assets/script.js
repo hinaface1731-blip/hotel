@@ -1,15 +1,15 @@
 /*
- * Контакты хозяина — заполните, и кнопки появятся в окне заявки и в блоке «Как добраться».
- *   phone    — номер для звонка, например "+79001234567"
- *   whatsapp — номер для WhatsApp без "+", например "79001234567"
- *   telegram — имя пользователя без "@", например "bayalag_arshan"
- *   email    — почта для заявок
- *   price    — стоимость за одного гостя в сутки, ₽
+ * Контакты и настройки.
+ *   phone — номер хозяина: для звонка, SMS и поиска в мессенджере MAX
+ *   max   — ссылка на профиль в MAX (Профиль → Поделиться), если есть; без неё гость ищет по номеру
+ *   avito — ссылка на объявление на Авито; появится кнопка «Забронировать на Авито»
+ *   email — почта для заявок (необязательно)
+ *   price — стоимость за одного гостя в сутки, ₽
  */
 const CONFIG = {
-  phone: "",
-  whatsapp: "",
-  telegram: "",
+  phone: "+79516262773",
+  max: "",
+  avito: "",
   email: "",
   price: 1300,
 };
@@ -172,38 +172,52 @@ bform.addEventListener("submit", (e) => {
 
 /* ---------- Modal ---------- */
 const modal = $("#modal");
+const phonePretty = CONFIG.phone.replace(/^\+7(\d{3})(\d{3})(\d{2})(\d{2})$/, "+7 ($1) $2-$3-$4");
+const copyText = (text) => navigator.clipboard?.writeText(text).catch(() => {});
+
 function actionButtons(text) {
   const enc = encodeURIComponent(text);
   const list = [];
-  if (CONFIG.whatsapp) list.push(["Отправить в WhatsApp", `https://wa.me/${CONFIG.whatsapp}?text=${enc}`, "gold"]);
-  if (CONFIG.telegram) list.push(["Написать в Telegram", `https://t.me/${CONFIG.telegram}`, "dark", true]);
-  if (CONFIG.email) list.push(["Отправить на почту", `mailto:${CONFIG.email}?subject=${encodeURIComponent("Бронирование — Баялиг")}&body=${enc}`, "dark"]);
-  if (CONFIG.phone) list.push(["Позвонить " + CONFIG.phone, `tel:${CONFIG.phone}`, "dark"]);
+  if (CONFIG.phone) {
+    list.push({ label: "Отправить по SMS", href: `sms:${CONFIG.phone}?&body=${enc}`, kind: "gold" });
+    list.push({
+      label: "Написать в MAX",
+      href: CONFIG.max || "https://max.ru/",
+      kind: "dark",
+      copy: true,
+      hint: CONFIG.max ? "Текст заявки скопирован — вставьте его в чат." : `Текст заявки скопирован. Найдите в MAX номер ${phonePretty} и вставьте его в чат.`,
+    });
+    list.push({ label: "Позвонить " + phonePretty, href: `tel:${CONFIG.phone}`, kind: "dark" });
+  }
+  if (CONFIG.email) list.push({ label: "Отправить на почту", href: `mailto:${CONFIG.email}?subject=${encodeURIComponent("Бронирование — Баялиг")}&body=${enc}`, kind: "dark" });
+  if (CONFIG.avito) list.push({ label: "Забронировать на Авито", href: CONFIG.avito, kind: "ghost" });
   return list;
 }
 function openModal(text) {
   $("#modalText").textContent = text;
   const box = $("#modalActions");
   box.innerHTML = "";
-  for (const [label, href, kind, copyFirst] of actionButtons(text)) {
+  const hint = document.createElement("p");
+  hint.className = "modal__hint";
+  hint.hidden = true;
+  for (const { label, href, kind, copy, hint: hintText } of actionButtons(text)) {
     const a = document.createElement("a");
     a.className = `btn btn--${kind} btn--block`;
     a.href = href;
-    a.target = "_blank";
-    a.rel = "noopener";
+    if (href.startsWith("http")) { a.target = "_blank"; a.rel = "noopener"; }
     a.textContent = label;
-    if (copyFirst) a.addEventListener("click", () => navigator.clipboard?.writeText(text).catch(() => {}));
+    if (copy) a.addEventListener("click", () => { copyText(text); hint.textContent = hintText; hint.hidden = false; });
     box.append(a);
   }
-  const copy = document.createElement("button");
-  copy.type = "button";
-  copy.className = "btn btn--block " + (box.children.length ? "btn--ghost" : "btn--gold");
-  copy.textContent = "Скопировать текст заявки";
-  copy.addEventListener("click", async () => {
-    try { await navigator.clipboard.writeText(text); copy.textContent = "Скопировано ✓"; }
-    catch { copy.textContent = "Выделите текст выше и скопируйте"; }
+  const copyBtn = document.createElement("button");
+  copyBtn.type = "button";
+  copyBtn.className = "btn btn--block " + (box.children.length ? "btn--ghost" : "btn--gold");
+  copyBtn.textContent = "Скопировать текст заявки";
+  copyBtn.addEventListener("click", async () => {
+    try { await navigator.clipboard.writeText(text); copyBtn.textContent = "Скопировано ✓"; }
+    catch { copyBtn.textContent = "Выделите текст выше и скопируйте"; }
   });
-  box.append(copy);
+  box.append(copyBtn, hint);
   modal.hidden = false;
   document.body.style.overflow = "hidden";
   $(".modal__close", modal).focus();
@@ -212,11 +226,17 @@ function closeModal() { modal.hidden = true; document.body.style.overflow = ""; 
 $(".modal__close", modal).addEventListener("click", closeModal);
 modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
 
-/* Contact links in the "Как добраться" block */
+/* Contact links in the "Как добраться" and booking blocks */
 const links = $("#contactLinks");
-if (CONFIG.phone) links.insertAdjacentHTML("afterbegin", `<a class="btn btn--gold" href="tel:${CONFIG.phone}">${CONFIG.phone}</a>`);
-if (CONFIG.whatsapp) links.insertAdjacentHTML("beforeend", `<a class="btn btn--dark" target="_blank" rel="noopener" href="https://wa.me/${CONFIG.whatsapp}">WhatsApp</a>`);
-if (CONFIG.telegram) links.insertAdjacentHTML("beforeend", `<a class="btn btn--dark" target="_blank" rel="noopener" href="https://t.me/${CONFIG.telegram}">Telegram</a>`);
+if (CONFIG.phone) {
+  links.insertAdjacentHTML("afterbegin", `<a class="btn btn--gold" href="tel:${CONFIG.phone}">${phonePretty}</a>`);
+  links.insertAdjacentHTML("beforeend", `<a class="btn btn--dark" target="_blank" rel="noopener" href="${CONFIG.max || "https://max.ru/"}">MAX</a>`);
+  $$("[data-phone]").forEach((el) => { el.textContent = phonePretty; el.href = `tel:${CONFIG.phone}`; el.hidden = false; });
+}
+if (CONFIG.avito) {
+  $$("[data-avito]").forEach((el) => { el.href = CONFIG.avito; el.hidden = false; });
+  links.insertAdjacentHTML("beforeend", `<a class="btn btn--dark" target="_blank" rel="noopener" href="${CONFIG.avito}">Мы на Авито</a>`);
+}
 
 /* ---------- Lightbox ---------- */
 const lb = $("#lb");
