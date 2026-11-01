@@ -9,7 +9,7 @@
 const CONFIG = {
   phone: "+79516262773",
   max: "",
-  avito: "",
+  avito: "https://www.avito.ru/kyren/doma_dachi_kottedzhi/4-k._dom_140_m_3729395741",
   email: "",
   price: 1300,
 };
